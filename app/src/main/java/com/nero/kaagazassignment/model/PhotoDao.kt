@@ -6,6 +6,7 @@ import androidx.room.*
 @Dao
 interface PhotoDao {
 
+
     @Insert
     fun insertPhoto(photoList: PhotoEntity)
 

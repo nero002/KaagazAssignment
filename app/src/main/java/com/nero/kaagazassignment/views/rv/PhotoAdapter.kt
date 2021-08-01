@@ -4,14 +4,18 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nero.kaagazassignment.databinding.GalleryItemLayouBinding
+import com.nero.kaagazassignment.model.OnClickPhoto
 import com.nero.kaagazassignment.model.PhotoEntity
 
-class PhotoAdapter(private var photoList: List<PhotoEntity>) :
+class PhotoAdapter(
+    private var photoList: List<PhotoEntity>,
+    private val onItemClickListener: OnClickPhoto
+) :
     RecyclerView.Adapter<CameraViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CameraViewHolder {
         val view =
             GalleryItemLayouBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return CameraViewHolder(view)
+        return CameraViewHolder(view, onItemClickListener)
     }
 
     override fun onBindViewHolder(holder: CameraViewHolder, position: Int) {

@@ -22,6 +22,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KaagazAssignment">
         <activity
+            android:name=".views.rv.PreviewActivity"
+            android:exported="true" />
+        <activity
             android:name=".views.GalleryActivity"
             android:exported="true" />
         <activity

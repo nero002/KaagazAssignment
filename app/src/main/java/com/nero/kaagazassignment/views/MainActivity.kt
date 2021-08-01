@@ -9,8 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
+import androidx.core.app.ActivityOptionsCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.PermissionChecker.PERMISSION_GRANTED
+import androidx.core.view.ViewCompat
 import com.google.common.util.concurrent.ListenableFuture
 import com.nero.kaagazassignment.databinding.ActivityMainBinding
 import com.nero.kaagazassignment.model.PhotoEntity
@@ -79,7 +81,7 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
 
             object : ImageCapture.OnImageSavedCallback {
                 override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
-                    toast(getExternalFilesDir(Environment.DIRECTORY_DCIM).toString())
+                    toast("Image saved")
 
                     val path = Uri.fromFile(photoFile)
                     binding.ibPreview.setImageURI(path)
@@ -87,7 +89,7 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
                     val photoLocation = photoFile.absolutePath.toString()
                     val photoName = photoFile.name.toString()
                     val timeStamp = System.currentTimeMillis()
-                    viewModel.addPhoto(PhotoEntity(photoLocation, photoName, timeStamp))
+                    viewModel.addPhoto(PhotoEntity( photoName,photoLocation, timeStamp))
 
                 }
 
@@ -131,5 +133,7 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
         super.onDestroy()
         cameraExecutor.shutdown()
     }
+
+
 }
 
