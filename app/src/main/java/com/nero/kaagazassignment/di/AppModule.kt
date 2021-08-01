@@ -1,6 +1,11 @@
 package com.nero.kaagazassignment.di
 
+import android.app.Application
+import androidx.room.Room
+import com.nero.kaagazassignment.model.PhotoDatabase
+import com.nero.kaagazassignment.utils.Constants.DATABASE_NAME
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
@@ -11,18 +16,10 @@ import javax.inject.Singleton
 class AppModule {
 
 
-//    @Singleton
-//    @Provides
-//    fun providesMovieApi(): MovieClient {
-//
-//        val interceptor = HttpLoggingInterceptor()
-//        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
-//
-//        return Retrofit.Builder()
-//            .addConverterFactory(GsonConverterFactory.create())
-//            .client(OkHttpClient.Builder().addInterceptor(interceptor = interceptor).build())
-//
-//            .baseUrl(BASE_URL).build().create(MovieClient::class.java)
-//
-//    }
+    @Provides
+    @Singleton
+    fun providesRoomDataBase(app: Application): PhotoDatabase {
+        return Room.databaseBuilder(app, PhotoDatabase::class.java, DATABASE_NAME)
+            .fallbackToDestructiveMigration().build()
+    }
 }

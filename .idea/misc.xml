@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android/KaagazAssignment/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/Android/KaagazAssignment/app/src/main/res/drawable/gallery.xml" value="0.3769230769230769" />
+        <entry key="..\:/Android/KaagazAssignment/app/src/main/res/drawable/ic_baseline_camera_alt_24.xml" value="0.3828125" />
+        <entry key="..\:/Android/KaagazAssignment/app/src/main/res/layout/activity_gallery.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/KaagazAssignment/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Android/KaagazAssignment/app/src/main/res/layout/fragment_gallery.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/KaagazAssignment/app/src/main/res/layout/gallery_item_laout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/KaagazAssignment/app/src/main/res/layout/gallery_item_layou.xml" value="0.17083333333333334" />
       </map>
     </option>
   </component>
